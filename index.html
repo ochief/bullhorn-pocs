@@ -30,7 +30,11 @@
         color: 'red'
     }).then(function (event) {
         console.log('[No-App] - Register Complete', event);
-        var candidateId = 1234;
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const candidateId = urlParams.get('EntityID');
+        console.log(candidateId);
         openSMS(candidateId);
     });
 
